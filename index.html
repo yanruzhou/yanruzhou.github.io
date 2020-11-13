@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="stuff/site.webmanifest">
+  <link rel="apple-touch-icon" href="stuff/icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="stuff/css/normalize.css">
+  <link rel="stylesheet" href="stuff/css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body id="main" style="width:100vw; background-color: rgb(255, 220, 103)">
+
+  <!-- Heading -->
+
+  <div class="gradient-border happy-bday">
+    <h style="color: cornflowerblue; font-size: 50px; font-family: Andale Mono;">
+      <span class="rainbow-text-animated">Happy Birthday Helen!</span>
+    </h>
+  </div>
+
+  <!-- End Heading -->
+
+  <div style="height: 50px"></div>
+
+  <!-- Card -->
+
+  <style>
+    .grid-container {
+      display: grid;
+      grid-column-gap: 10px;
+      padding: 10px;
+    }
+    .grid-item {
+      padding: 20px;
+    }
+    .grid-item1 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    .grid-item2 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    .grid-item3 {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+  </style>
+  <div id="WOOOO" class="card center-div rainbow-text" style="width: 80%; background-color: white">
+    <div class="grid-container">
+      <img id="img-left" class="grid-item grid-item1" style="width:400px; height:auto; margin: auto auto" src="stuff/pic1.jpeg">
+      <div class="grid-item grid-item2" style="height: 500px; text-align:center; margin: auto auto; font-family: 'Andale Mono'; font-size: 20px;">
+        <div id  = "textbody" ><p>happy 20th birthday helen!!!</p>
+          <p>welcome to the third decade of your life! i hope that this upcoming year will be the year in which you achieve everything that you 
+            strive for. even though you're getting older, never forget the crazy child in your heart hehe. ty for being such a good friend for 
+            the past like 9 years omg. let's mark this new year of your life with lots of hiking, food and city-exploring adventures! ps. don't go 
+            too wild today lol</p>
+          <p> -yanru </p></div>
+          <img id="img-mid" style="width:550px; height: auto; margin-top: 100px; display: none" src="stuff/pic5.jpg">
+
+      </div>
+      <img id="img-right" class="grid-item grid-item3" style="width:300px; height: auto; margin: auto auto" src="stuff/pic2.jpeg">
+    </div>
+
+  </div>
+
+  <!-- End Card -->
+
+
+  <style>
+    #click-to-authorize {
+      padding: 1em;
+      background-color: steelblue;
+    }
+    #click-to-authorize:hover {
+      cursor: pointer;
+    }
+    #hover-to-play {
+      padding: 1em;
+      background-color: rgb(255, 103, 103);
+      display: none;
+    }
+    #hover-to-play:hover {
+      cursor: crosshair;
+    }
+  </style>
+
+  <div id="hover-to-play" style="text-align: center; display: block; font-family: 'Andale Mono'; 
+        width: 75%;
+        margin: 50px auto 0px auto;
+        left: 0;
+        right: 0;">
+    hover for a surprise
+  </div>
+  <div style="text-align: center; margin-top: 20px; font-family: 'Andale Mono'; color: rgb(255, 103, 103)">Helen's 20th birthday, Nov 12, 2020</div>
+
+  <!-- Add your site or application content here -->
+  <script>
+      const audio = new Audio('stuff/song.mp3');
+      const body = document.querySelector('#main');
+      const main = document.querySelector('#WOOOO');
+      const img_left = document.querySelector('#img-left');
+      const img_mid = document.querySelector('#img-mid');
+      const img_right = document.querySelector('#img-right');
+      const textbody = document.querySelector('#textbody');
+
+
+      window.onload = () => {
+          const hoverToPlay = document.querySelector('#hover-to-play');
+
+          hoverToPlay.onmouseover = () => {
+              audio.play();
+              img_left.style.width = "300px";
+              img_right.style.width = "300px";
+              img_left.setAttribute("src", "stuff/pic3.JPG");
+              img_right.setAttribute("src", "stuff/pic4.jpeg");
+              textbody.style.display = "none";
+              img_mid.style.display = "block";
+
+
+              img_left.classList.add('rotate');
+              img_right.classList.add('rotate2');
+              hoverToPlay.textContent = "hi helen";
+              hoverToPlay.classList.add("rainbow-text-animated-quick");
+              body.classList.add("quadrat");
+              main.classList.add("rainbow-text-animated-quick")
+          }
+      }
+  </script>
+  <script src="stuff/js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="stuff/js/plugins.js"></script>
+  <script src="stuff/js/main.js"></script>
+</body>
+
+</html>
